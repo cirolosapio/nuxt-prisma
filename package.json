@@ -6,10 +6,30 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "sql:generate": "npx prisma migrate dev --name init"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "nuxt": "^3.7.0"
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "eslint": "^8.48.0",
+    "nuxt": "^3.7.0",
+    "prisma": "^5.2.0"
+  },
+  "dependencies": {
+    "@prisma/client": "5.2.0"
+  },
+  "eslintConfig": {
+    "extends": "@nuxtjs/eslint-config-typescript",
+    "rules": {
+      "curly": [
+        "error",
+        "multi-or-nest"
+      ],
+      "semi": [
+        "error",
+        "never"
+      ]
+    }
   }
 }
